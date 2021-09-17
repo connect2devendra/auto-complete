@@ -1,0 +1,24 @@
+Backend:
+
+-> First of all create database and import database .sql dump file 
+-> Configure database in backend-api/config/dbconn.php
+-> Now, got to backend-api folder and run below command to start server on port=8000 
+
+php -S 127.0.0.1:8000
+
+####Api End Point
+
+`<GET>` : <http://127.0.0.1:8000/api/country/autocomplete.php?keyword=ind>
+
+
+
+Frontend:
+
+-> Take git clone and then run "npm install" to get all dependencies
+
+-> Run Below command to start frontend react App
+
+npm start
+
+
+
