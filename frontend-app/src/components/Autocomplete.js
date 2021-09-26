@@ -4,7 +4,7 @@ const Autocomplete = () => {
 
     const [keyword, setKeyword] = useState("");
     const [countries, setCountries] = useState(null);
-    const apiEndPoint = "/api/country/autocomplete.php";
+    const apiEndPoint = "http://127.0.0.1:8000/api/country/autocomplete.php";
 
     const handleKeywordChange = (e) => {
         let name = e.target.name;

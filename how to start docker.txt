@@ -1,0 +1,12 @@
+Step 1:
+GIT clone project
+
+Step 2:
+Go inside root directory where "docker-compose.yml" 
+
+Step 3:
+Open terminal or CMD and run below command
+
+docker-compose up -d
+
+Note:- Docker Desktop or Docker engine should be installed already.

@@ -1,10 +1,10 @@
 <?php
 class Database
 {
-    private $host='localhost';
-    private $dbname='github_autocompletes';
+    private $host='172.25.80.1'; //system IP Address RUN ipconfig to get it in CMD
+    private $dbname='autocompletes';
     private $user='root';
-    private $password='';
+    private $password='test';
     private $port='3307';
     private $dbconn;    
 

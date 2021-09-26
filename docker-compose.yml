@@ -1,0 +1,44 @@
+version: "3.1"
+
+services:
+  frontend:
+    build:
+      context: ./frontend-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend-app:/usr/app
+    ports:
+      - "5000:3000"
+
+  backend:
+    build: 
+      context: ./backend-api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend-api:/var/www/html
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    #restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: autocompletes
+      #MYSQL_USER: "root"
+      #MYSQL_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: test
+    volumes:
+      - ./mysql-data/dump_db.sql:/docker-entrypoint-initdb.d/dump_db.sql 
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
