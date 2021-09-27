@@ -7,8 +7,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend-app:/usr/app
+      - /usr/app/node_modules
     ports:
       - "5000:3000"
+    stdin_open: true
+    tty: true
 
   backend:
     build: 
